@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fundo preto/cinza bem escuro */
+    color: #e0e0e0; /* Texto principal cinza claro/branco */
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+header {
+    background-color: #1f1f1f;
+    color: #fdd835; /* Amarelo um pouco mais vibrante */
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 2px solid #fdd835;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #bdbdbd; /* Cinza claro para o subtítulo */
+}
+
+main {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #1e1e1e;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+    /* Para o efeito de scroll */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    color: #fdd835; /* Amarelo vibrante */
+    border-bottom: 2px solid #fdd835;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+section h2::before { /* Adiciona o emoji antes do H2 */
+    content: attr(data-emoji); /* Pega o emoji do atributo HTML */
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #2a2a2a; /* Fundo do item um pouco mais escuro */
+    color: #f5f5f5; /* TEXTO BRANCO para alta legibilidade */
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #fdd835; /* Destaque amarelo */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(10px) scale(1.02); /* Efeito mais pronunciado */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    background-color: #333333; /* Fundo um pouco mais claro no hover */
+}
+
+article {
+    margin-bottom: 25px;
+    border-left: 4px solid #fdd835;
+    padding-left: 20px;
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+article h3 {
+    margin-top: 0;
+    color: #fdd835;
+    font-size: 1.3rem;
+}
+
+article ul {
+    margin-top: 10px;
+}
+article ul li {
+    background: none;
+    border: none;
+    padding: 5px 0;
+    color: #e0e0e0;
+}
+article ul li:hover {
+    transform: none; /* Remove hover dos sub-itens se não desejar */
+    box-shadow: none;
+    background: none;
+    color: #fff;
+}
+
+
+#contato p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+#contato a {
+    color: #fdd835;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#contato a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #fdd835;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background-color: #1f1f1f;
+    color: #bdbdbd; /* Cinza claro para o footer */
+    border-top: 1px solid #333;
+}
